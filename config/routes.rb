@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root "blog#index"
+  resources :users, only: [:new, :create]
+  resources :blog, only: [:new, :create]
+  # get "/blog/new", to: "blog#new"
+  # post "/blog/new", to: "blog#create"
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  get "/logout", to: "sessions#destroy"
 end
