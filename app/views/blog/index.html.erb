@@ -1,1 +1,10 @@
-Hello!
+
+<% @blogs.each do |blog| %>
+  <%= blog.title %> by <%= blog.user.name %> </br>
+  <%= blog.article %></br></br>
+
+  Comments </br>
+  <%  blog.commentaries.each do |comment| %>
+      <%= comment.text %></br>
+  <% end %>
+<% end %>
